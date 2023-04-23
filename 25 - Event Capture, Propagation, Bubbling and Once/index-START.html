@@ -43,6 +43,15 @@
 
 <button></button>
 <script>
+  const divs = document.querySelectorAll('div'); //select all the <divs> and store in the variable divs
+
+  function logText(e){
+    e.stopPropagation(); //without it, the event will list all the classes of the parent of the div you clicked
+    console.log(this.classList.value); //show the class of the element you clicked
+    
+  }
+
+divs.forEach(div => div.addEventListener('click', logText))
 
 </script>
 </body>
